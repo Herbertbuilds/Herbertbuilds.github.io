@@ -3,7 +3,7 @@
 Built this portfolio over the span of a year, been improving it as different ideas come to mind and will continue to do so, its build using HTML,CSS(used tailwind and google fonts) and Java Script
 
 ## 📸 Preview
-![Portfolio Demo](./assets/demo.gif)
+![Portfolio Demo](demo.gif)
 
 ## 🚀 Features
 * **Interactive Background:** I added a particle background that connects the particles to your mouse.
