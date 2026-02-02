@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbert Jantjies | Software Developer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              primary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                400: '#38e8ff',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                900: '#0c4a6e',
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 antialiased overflow-x-hidden min-h-screen font-sans">
+
+    <!-- background -->
+    <canvas id="bg-canvas" class="bg-canvas"></canvas>
+
+    <!-- theme toggle -->
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i id="theme-icon" class="fas fa-lightbulb"></i>
+        </button>
+    </div>
+
+    <!-- main container -->
+    <main class="main-container">
+        <div id="content-area" class="content-area">
+            <!--about section -->
+            <section id="about" class="tab-content about-section">
+                <div class="about-container">
+                    <div class="about-text">
+                        <div class="text-content">
+                            <div class="status-badge">
+                                <span class="status-dot"></span>
+                                Open to Work
+                            </div>
+                            <h1 class="main-heading">
+                                Herbert <br />
+                                <span class="gradient-text">Jantjies</span>
+                            </h1>
+                            <p class="subtitle">
+                                Software Developer transforming complex problems into elegant, efficient code.
+                            </p>
+                        </div>
+                        
+                        <div class="education-badge">
+                             <i class="fas fa-graduation-cap education-icon"></i>
+                             <span class="education-text">BSC Computer Science @ NUST</span>
+                        </div>
+
+                        <p class="description">
+                            Based in Namibia, I specialize in full-stack development with a focus on clean architecture and user experience. 
+                            From Python scripting to responsive interfaces designs, I'm interested in all this Python and Web dev related.
+                        </p>
+
+                        <div class="action-buttons">
+                             <button onclick="switchTab('projects')" class="primary-btn">
+                                View Projects <i class="fas fa-arrow-right"></i>
+                             </button>
+                             <a href="mailto:herbertbuilds@gmail.com" class="secondary-btn">
+                                Contact Me
+                             </a>
+                        </div>
+                    </div>
+
+                    <!-- profile image -->
+                    <div class="profile-image-container">
+                        <div class="profile-glow"></div>
+                        <div class="profile-image-wrapper">
+                            <img src="image/Me.jpg" alt="Herbert Jantjies" class="profile-image" />
+                            <div class="profile-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- technical section -->
+                <div class="skills-section">
+                    <h2 class="section-heading">
+                        Technical <span class="accent-text">Arsenal</span>
+                    </h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon java-icon">
+                                <i class="fa fa-coffee"></i>
+                            </div>
+                            <span class="skill-name">Java</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon python-icon">
+                                <i class="fa fa-terminal"></i>
+                            </div>
+                            <span class="skill-name">Python</span>
+                        </div>
+                         <div class="skill-card">
+                            <div class="skill-icon web-icon">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <span class="skill-name">Web Dev</span>
+                        </div>
+                         <div class="skill-card">
+                            <div class="skill-icon algo-icon">
+                                <i class="fa fa-cloud"></i>
+                            </div>
+                            <span class="skill-name">Ballerina</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- skills & hoobbies -->
+                <div class="additional-info-grid">
+                    <div class="info-card">
+                       <h3 class="info-heading">
+                         <i class="fas fa-lightbulb heading-icon"></i> Professional Strengths
+                       </h3>
+                       <ul class="info-list">
+                          <li class="info-item">
+                            <span class="bullet-point"></span>
+                            <span>Strong analytical and problem-solving capabilities</span>
+                          </li>
+                          <li class="info-item">
+                            <span class="bullet-point"></span>
+                            <span>Efficient in rapid prototyping and clean code practices</span>
+                          </li>
+                          <li class="info-item">
+                            <span class="bullet-point"></span>
+                            <span>Continuous learner adaptable to new technologies</span>
+                          </li>
+                       </ul>
+                    </div>
+
+                    <div class="info-card">
+                       <h3 class="info-heading">
+                         <i class="fa fa-gamepad heading-icon"></i> Beyond the Code
+                       </h3>
+                       <div class="hobbies-container">
+                          <span class="hobby-tag">
+                             <i class="fas fa-gamepad"></i> Gaming
+                          </span>
+                          <span class="hobby-tag">
+                             <i class="fas fa-volleyball"></i> Volleyball
+                          </span>
+                          <span class="hobby-tag">
+                             <i class="fas fa-book"></i> Reading
+                          </span>
+                          <span class="hobby-tag">
+                             <i class="fas fa-code"></i> Side Quests
+                          </span>
+                       </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="tab-content projects-section hidden">
+                 <div class="section-header">
+                    <h2 class="section-title">Featured <span class="accent-text">Work</span></h2>
+                    <p class="section-description">
+                      A selection of projects that demonstrate my technical capabilities and attention to detail.
+                    </p>
+                  </div>
+
+                  <div class="projects-grid">
+                      <div class="project-card">
+                        <div class="project-header">
+                           <div class="project-bg-icon">
+                              <i class="fa fa-folder-open"></i>
+                           </div>
+                           <div class="project-icon">
+                             <i class="fa fa-briefcase"></i>
+                           </div>
+                        </div>
+                        <div class="project-content">
+                          <h3 class="project-title">Pivot</h3>
+                          <p class="project-description">
+                            A lightweight, terminal-based personal finance tracker built with Python and CSV.
+                          </p>
+                          <div class="tech-tags">
+                              <span class="tech-tag">Python</span>
+                              <span class="tech-tag">CSV</span>
+                              <span class="tech-tag">lightweight</span>
+                          </div>
+                          <div class="project-links">
+                            <a href="https://github.com/Herbertbuilds/Pivot" target="_blank" rel="noopener noreferrer" class="source-link">
+                              <i class="fab fa-github"></i> <span>Source Code</span>
+                            </a>
+                            <a href="https://github.com/Herbertbuilds/Pivot" target="_blank" rel="noopener noreferrer" class="details-link">
+                              <span>Details</span> <i class="fa fa-external-link"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="project-card">
+                        <div class="project-header">
+                           <div class="project-bg-icon">
+                              <i class="fa fa-folder-open"></i>
+                           </div>
+                           <div class="project-icon">
+                             <i class="fa fa-desktop"></i>
+                           </div>
+                        </div>
+                        <div class="project-content">
+                          <h3 class="project-title">Professional Portfolio</h3>
+                          <p class="project-description">
+                            The application you are using right now. Built with custom Canvas animations, dark mode engine, and component-based architecture.
+                          </p>
+                          <div class="tech-tags">
+                              <span class="tech-tag">JS</span>
+                              <span class="tech-tag">Tailwind</span>
+                              <span class="tech-tag">HTML & CSS</span>
+                          </div>
+                          <div class="project-links">
+                            <a href="https://github.com/Herbertbuilds/Herbertbuilds.github.io" target="_blank" rel="noopener noreferrer" class="source-link">
+                              <i class="fab fa-github"></i> <span>Source Code</span>
+                            </a>
+                            <a href="https://github.com/Herbertbuilds/Herbertbuilds.github.io" class="details-link">
+                              <span>Details</span> <i class="fa fa-external-link"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </section>
+
+            <!-- Credential section -->
+            <section id="credentials" class="tab-content credentials-section hidden">
+                <div class="section-intro">
+                    <h2 class="section-title">My <span class="accent-text">Credentials</span></h2>
+                    <p class="section-subtitle">Certifications and educational milestones.</p>
+                </div>
+
+                <div class="credentials-list">
+                    <div class="credential-card">
+                        <div class="credential-content">
+                            <div class="credential-icon">
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+                            <div class="credential-details">
+                                <div class="credential-header">
+                                    <h3 class="credential-title">Python for Beginners</h3>
+                                    <span class="verification-badge">
+                                        <i class="fas fa-certificate"></i> Verified
+                                    </span>
+                                </div>
+                                <p class="credential-source">Online Course</p>
+                                <p class="credential-description">
+                                    Comprehensive Python programming covering fundamentals, data structures, scripting, web scraping, and libraries such as NumPy, Pandas, Matplotlib, and Scikit.
+                                </p>
+                                <a href="Certificate/Python For Beginners Certificate.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                                    <span>View Certificate</span> <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="credential-card">
+                        <div class="credential-content">
+                            <div class="credential-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="credential-details">
+                                <div class="credential-header">
+                                    <h3 class="credential-title">Web Development</h3>
+                                    <span class="verification-badge">
+                                        <i class="fas fa-certificate"></i> Verified
+                                    </span>
+                                </div>
+                                <p class="credential-source">Simplilearn</p>
+                                <p class="credential-description">
+                                    Web development for Beginners course covering HTML creation, CSS styling, and scripting in JavaScript and JSON.
+                                </p>
+                                <a href="Certificate/Web development for Beginners.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                                    <span>View Certificate</span> <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            
+
+
+                    <div class="credential-card">
+                        <div class="credential-content">
+                            <div class="credential-icon">
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+                            <div class="credential-details">
+                                <div class="credential-header">
+                                    <h3 class="credential-title">CS50 Python</h3>
+                                    <span class="verification-badge">
+                                        <i class="fas fa-certificate"></i> Verified
+                                    </span>
+                                </div>
+                                <p class="credential-source">Harvard(via edx)</p>
+                                <p class="credential-description">
+                                    Python programming fundamentals: variables, functions, loops, conditionals, exceptions, file I/O, regular expressions, object-oriented programming, and unit testing. 
+                                </p>
+                                <a href="Certificate/CS50P.pdf" target="_blank" rel="noopener noreferrer" class="credential-link">
+                                    <span>View Certificate</span> <i class="fa fa-external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- contact section -->
+            <section id="contact" class="tab-content contact-section hidden">
+                <div class="contact-header">
+                    <div class="contact-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
+                    <p class="contact-description">
+                      I'm actively seeking new opportunities to contribute my skills. Whether you have a project in mind or just want to chat tech, I'd love to hear from you.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-methods">
+                       <a href="mailto:herbertbuilds@gmail.com" class="contact-card email-card">
+                          <div class="contact-card-header">
+                             <div class="contact-method-icon">
+                                <i class="fas fa-envelope"></i>
+                             </div>
+                             <h3 class="contact-method-title">Email</h3>
+                             <p class="contact-method-subtitle">Best way to reach me</p>
+                          </div>
+                          <div class="contact-card-footer">
+                             <span class="contact-info">herbertbuilds@gmail.com</span>
+                             <i class="fas fa-arrow-right"></i>
+                          </div>
+                       </a>
+
+                       <a href="tel:+264818271151" class="contact-card phone-card">
+                          <div class="contact-card-header">
+                             <div class="contact-method-icon">
+                                <i class="fas fa-phone"></i>
+                             </div>
+                             <h3 class="contact-method-title">Phone</h3>
+                             <p class="contact-method-subtitle">Available 9am - 5pm</p>
+                          </div>
+                          <div class="contact-card-footer">
+                             <span class="contact-info">+264 81 827 1151</span>
+                             <i class="fas fa-arrow-right"></i>
+                          </div>
+                       </a>
+
+                       <div class="location-card">
+                          <div class="location-icon">
+                            <i class="fas fa-location-dot"></i>
+                          </div>
+                          <div class="location-info">
+                            <h3 class="location-title">Based in Namibia</h3>
+                            <p class="location-subtitle">Available for remote work worldwide</p>
+                          </div>
+                       </div>
+                    </div>
+
+                    <div class="social-card">
+                        <div class="social-glow"></div>
+                        
+                        <div class="social-content">
+                          <h3 class="social-title">Social Profiles</h3>
+                          <p class="social-description">Follow my journey and see what I'm working on.</p>
+                        </div>
+                        
+                        <div class="social-links">
+                          <a href="https://github.com/HerbertBuilds" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github"></i>
+                            <div class="social-platform-info">
+                                <span class="platform-name">GitHub</span>
+                                <span class="platform-handle">@HerbertBuilds</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                          </a>
+                          
+                          <a href="https://www.linkedin.com/in/herbert-jantjies-79267537b/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="social-platform-info">
+                                <span class="platform-name">LinkedIn</span>
+                                <span class="platform-handle">Connect professionally</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                          </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- navigation -->
+    <nav class="bottom-nav">
+      <div class="nav-container">
+        
+        <button onclick="switchTab('about')" class="nav-btn active" data-tab="about">
+            <div class="nav-icon-bg">
+              <i class="fas fa-user"></i>
+            </div>
+            <span class="nav-label">About</span>
+            <span class="active-indicator"></span>
+        </button>
+
+        <button onclick="switchTab('projects')" class="nav-btn" data-tab="projects">
+            <div class="nav-icon-bg">
+              <i class="fas fa-code"></i>
+            </div>
+            <span class="nav-label">Projects</span>
+            <span class="active-indicator"></span>
+        </button>
+
+        <button onclick="switchTab('credentials')" class="nav-btn" data-tab="credentials">
+            <div class="nav-icon-bg">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <span class="nav-label">Credentials</span>
+            <span class="active-indicator"></span>
+        </button>
+
+        <button onclick="switchTab('contact')" class="nav-btn" data-tab="contact">
+            <div class="nav-icon-bg">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <span class="nav-label">Contact</span>
+            <span class="active-indicator"></span>
+        </button>
+        
+      </div>
+    </nav>
+   
+    <!-- footer -->
+    <footer class="site-footer">
+        &copy; <span id="year"></span> Herbert Jantjies
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
