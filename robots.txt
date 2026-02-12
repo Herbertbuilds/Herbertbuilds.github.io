@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://herbertbuilds.github.io/sitemap.xml
